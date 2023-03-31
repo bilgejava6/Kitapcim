@@ -19,7 +19,7 @@ public class KitapController {
     private final KitapService kitapService;
 
     @PostMapping(SAVE)
-    public ResponseEntity<Kitap> saveKitap( @Valid SaveKitapRequestDto dto){
+    public ResponseEntity<Kitap> saveKitap(@RequestBody @Valid SaveKitapRequestDto dto){
       return ResponseEntity.ok(kitapService.save(dto));
     }
 

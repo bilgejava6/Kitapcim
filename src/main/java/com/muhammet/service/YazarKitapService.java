@@ -12,4 +12,11 @@ public class YazarKitapService  extends ServiceManager<YazarKitap,Long> {
         super(repository);
         this.repository = repository;
     }
+
+    public void save(Long yazarId,Long kitapId){
+        save(YazarKitap.builder()
+                .yazarid(yazarId)
+                .kitapid(kitapId)
+                .build());
+    }
 }

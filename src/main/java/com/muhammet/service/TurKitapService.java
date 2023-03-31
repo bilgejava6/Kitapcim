@@ -12,4 +12,11 @@ public class TurKitapService extends ServiceManager<TurKitap,Long> {
         super(repository);
         this.repository=repository;
     }
+
+    public void save(Long turId, Long kitapId){
+        save(TurKitap.builder()
+                .turid(turId)
+                .kitapid(kitapId)
+                .build());
+    }
 }
