@@ -15,6 +15,7 @@ public class Yayinevi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(length = 350, nullable = false)
     String ad;
     String adres;
     String telefon;

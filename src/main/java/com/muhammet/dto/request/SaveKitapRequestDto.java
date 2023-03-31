@@ -5,13 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class SaveKitapRequestDto {
     String ad;
-    String yazar;
-    String yayinevi;
-    String tur;
+    Integer sayfasayisi;
+    Long basimtarihi;
+    List<Long> yazarids;
+    Long yayineviid;
+    List<Long> turids;
 }

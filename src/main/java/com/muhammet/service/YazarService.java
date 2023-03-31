@@ -1,6 +1,7 @@
 package com.muhammet.service;
 
 import com.muhammet.dto.request.SaveYazarRequestDto;
+import com.muhammet.mapper.IYazarMapper;
 import com.muhammet.repository.IYazarRepository;
 import com.muhammet.repository.entity.Yazar;
 import com.muhammet.utility.ServiceManager;
@@ -19,6 +20,7 @@ public class YazarService extends ServiceManager<Yazar,Long> {
     public void save(SaveYazarRequestDto dto){
         Optional<Yazar> yazar = repository.findOptionalByAdIgnoreCase(dto.getAd());
         if(yazar.isEmpty())
-            repository.save(Yazar.builder().ad(dto.getAd()).biyografi(dto.getBiyografi()).build());
+            //repository.save(Yazar.builder().ad(dto.getAd()).biyografi(dto.getBiyografi()).build());
+            save(IYazarMapper.INSTANCE.toYazar(dto));
     }
 }
