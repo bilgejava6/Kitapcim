@@ -18,6 +18,12 @@ import static com.muhammet.constants.EndPointList.*;
 public class KitapController {
     private final KitapService kitapService;
 
+    /**
+     * ÖDEV
+     * Kitap adı verildiğinde yazar listesi gelsin.
+     * Tür adı verildiğinde kitap listesi gelsin.
+     */
+
     @PostMapping(SAVE)
     public ResponseEntity<Kitap> saveKitap(@RequestBody @Valid SaveKitapRequestDto dto){
       return ResponseEntity.ok(kitapService.save(dto));
