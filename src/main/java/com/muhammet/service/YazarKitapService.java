@@ -5,6 +5,8 @@ import com.muhammet.repository.entity.YazarKitap;
 import com.muhammet.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class YazarKitapService  extends ServiceManager<YazarKitap,Long> {
     private final IYazarKitapRepository repository;
@@ -18,5 +20,9 @@ public class YazarKitapService  extends ServiceManager<YazarKitap,Long> {
                 .yazarid(yazarId)
                 .kitapid(kitapId)
                 .build());
+    }
+
+    public List<Long> getAllByYazarid(Long yazarid){
+        return repository.getAllByYazarid(yazarid);
     }
 }

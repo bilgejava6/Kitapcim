@@ -14,6 +14,7 @@ public class EndPointList {
     public static final String FIND_ALL = "/findall";
     public static final String FIND_BY_ID = "/findbyid";
     public static final String FIND_BY_USERNAME = "/findbyusername";
+    public static final String FIND_BY_YAZARADI = "/findbyyazaradi";
 
     public static final String DELETE_BY_ID = "/deletebyid";
     public static final String UPDATE = "/update";

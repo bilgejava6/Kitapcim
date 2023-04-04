@@ -7,6 +7,7 @@ import com.muhammet.repository.entity.Yazar;
 import com.muhammet.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,5 +23,9 @@ public class YazarService extends ServiceManager<Yazar,Long> {
         if(yazar.isEmpty())
             //repository.save(Yazar.builder().ad(dto.getAd()).biyografi(dto.getBiyografi()).build());
             save(IYazarMapper.INSTANCE.toYazar(dto));
+    }
+
+    public List<Yazar> findAllByAdContaining(String ad){
+        return repository.findAllByAdContaining(ad);
     }
 }
